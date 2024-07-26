@@ -1,8 +1,13 @@
 import requests
 import os
+import pandas as pd 
 
+def list2df():
+    l = req2list()
+    df =  pd.DataFrame(l)
+    return df
 
-def req2dataframe():
+def req2list()->list:
     _, data = req()
     l = data['boxOfficeResult']['dailyBoxOfficeList']
     return l 
@@ -17,7 +22,7 @@ def req(dt="20120101"):
     r = requests.get(url)
     code = r.status_code
     data = r.json()
-    print(data)
+    # print(data)
     return code, data
 
 def gen_url(dt="20120101"):
