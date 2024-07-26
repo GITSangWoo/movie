@@ -3,8 +3,13 @@
 ### install
 ```bash
 # main
-$ pip install git+http...
+$ pip install git+https://github.com/GITSangWoo/movie.git@main
+
+# branch 
+$ pip install git+https://github.com/GITSangWoo/movie.git@
 ```
+
+
 ### start dev 
 ```
 $ git clone <URL>
