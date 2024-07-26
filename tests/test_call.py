@@ -4,7 +4,7 @@ def test_req2dataframe():
     l = req2dataframe()
     assert len(l) > 0
     v = l[0]
-    assert 'rnum' in v.keys
+    assert 'rnum' in v.keys()
     assert  v['rnum'] == '1'
 
 def test_비밀키숨기기():
