@@ -2,7 +2,7 @@ from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df
 import pandas as pd 
 
 def test_savd2df():
-    df=save2df()
+    df=save2df(load_dt='20241231')
     assert True
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
@@ -33,6 +33,9 @@ def test_gen_url():
     url = gen_url()
     assert "http" in url
     assert "kobis" in url
+
+    url = gen_url("20241231")
+    assert "20241231" in url
 
 def test_req():
     code, data = req()
