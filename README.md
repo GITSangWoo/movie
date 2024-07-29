@@ -3,15 +3,28 @@
 ### install
 ```bash
 # main
-$ pip install git+http...
+$ pip install git+https://github.com/dMario24/mov.git
+
+# branch
+$ pip install git+https://github.com/dMario24/mov.git@<BRANCH_NAME>
 ```
-### start dev 
-```
+
+### start dev
+```bash
 $ git clone <URL>
 $ cd <DIR>
-$ # option
-$ pdm venv create 
 $ source .venv/bin/activate
+$ pdm install
+$ pytest
 
-$ pytest  
+# option
+$ pdm venv create
+```
+
+### setting env
+```bash
+cat ~/.zshrc | tail -n 3
+
+# MY_ENV
+export MOVIE_API_KEY="<KEY>"
 ```
