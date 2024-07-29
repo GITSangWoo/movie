@@ -3,10 +3,10 @@
 ### install
 ```bash
 # main
-$ pip install git+https://github.com/GITSangWoo/mov.git
+$ pip install git+https://github.com/GITSangWoo/movie.git
 
 # branch
-$ pip install git+https://github.com/GITSangWoo/mov.git@<BRANCH_NAME>
+$ pip install git+https://github.com/GITSangWoo/movie.git@0.2/api 
 ```
 
 ### start dev
