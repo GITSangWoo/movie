@@ -1,5 +1,12 @@
-from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df
+from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df,echo
 import pandas as pd 
+
+def test_echo():
+    df=echo("사람 살려요")
+    print(df)
+    assert True
+
+
 
 def test_savd2df():
     df=save2df()
