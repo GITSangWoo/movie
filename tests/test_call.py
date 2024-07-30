@@ -1,6 +1,16 @@
-from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df,echo
+from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df,echo,apply_type2df
 import pandas as pd 
 
+
+def test_apply_type2df():
+    df= apply_type2df()
+    assert isinstance(df,pd.DataFrame)
+    assert str(df['rnum'].dtype) in ['int64'] 
+    assert str(df['rank'].dtype) in ['int64'] 
+    num_cols = ['rnum', 'rank', 'rankInten', 'salesAmt', 'audiCnt', 'audiAcc', 'scrnCnt', 'showCnt', 'salesShare', 'salesInten', 'salesChange', 'audiInten', 'audiChange']
+    for i in num_cols:
+        # assert df[i].dtype in ['int64','float64']
+        df[num_cols] = df[num_cols].apply(pd.to_numeric)
 def test_echo():
     df=echo("사람 살려요")
     print(df)
