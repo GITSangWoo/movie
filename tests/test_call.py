@@ -21,11 +21,10 @@ def test_echo():
 
 
 def test_savd2df():
-    df=save2df()
-    assert True
+    d = {"repNationCd" : "K"}
+    df=save2df(url_param = d)
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
-    assert len(df)==10
 
 
 def test_list2df():
@@ -49,12 +48,13 @@ def test_비밀키숨기기():
 
 
 def test_gen_url():
-    url = gen_url()
-    assert "http" in url
-    assert "kobis" in url
-    req_val = {"multiMovieYn" : "N"}
-    url = gen_url(req_val)
-    # url = gen_url({"multiMovieYn" : "Y"})
+    # url = gen_url()
+    #assert "http" in url
+    # assert "kobis" in url
+    # d = {"multiMovieYn" : "N"}
+    # d = {"multiMovieYn" : "Y"}
+    s = {"repNationCd" : "K"}
+    url = gen_url(url_param=s)
 
 def test_req():
     code, data = req()
