@@ -16,7 +16,7 @@ def apply_type2df(load_dt="20120101",path="~/tmp/test_parquet"):
     #df[num_cols] = df[num_cols].apply(pd.to_numeric)    
     return df
 
-def get_data(load_dt='20120101', url_param={}):
+def save2df(load_dt='20120101', url_param={}):
     # airflow 호출지점
     df = list2df(load_dt,url_param)
     # df에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
