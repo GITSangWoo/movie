@@ -1,4 +1,4 @@
-from mov.api.call import gen_url, req, get_key,req2list,list2df,save2df,echo,apply_type2df
+from mov.api.call import gen_url, req, get_key,req2list,list2df,get_data,echo,apply_type2df
 import pandas as pd 
 
 
@@ -22,7 +22,7 @@ def test_echo():
 
 def test_savd2df():
     d = {"repNationCd" : "K"}
-    df=save2df(url_param = d)
+    df=get_data(url_param = d)
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
 
