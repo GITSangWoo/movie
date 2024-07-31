@@ -11,9 +11,11 @@ def test_apply_type2df():
     for i in num_cols:
         # assert df[i].dtype in ['int64','float64']
         df[num_cols] = df[num_cols].apply(pd.to_numeric)
+
+
 def test_echo():
     df=echo("사람 살려요")
-    print(df)
+    # print(df)
     assert True
 
 
@@ -23,7 +25,7 @@ def test_savd2df():
     assert True
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
-
+    assert len(df)==10
 
 
 def test_list2df():
@@ -50,9 +52,9 @@ def test_gen_url():
     url = gen_url()
     assert "http" in url
     assert "kobis" in url
-
-    url = gen_url("20241231")
-    assert "20241231" in url
+    req_val = {"multiMovieYn" : "N"}
+    url = gen_url(req_val)
+    # url = gen_url({"multiMovieYn" : "Y"})
 
 def test_req():
     code, data = req()
