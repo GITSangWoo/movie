@@ -23,6 +23,7 @@ def test_echo():
 def test_savd2df():
     d = {"repNationCd" : "K"}
     df=save2df(url_param = d)
+    print(df)
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
 
